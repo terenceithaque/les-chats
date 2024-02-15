@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Quizz</title>
+        <link rel="stylesheet" href="CSS/style_quizz.css"/> 
+        <link rel="icon" type="image/jpg" href="images/chat_presentation.jpg"/>
+        <script src="script/validation_quizz.js"></script>
+        
+    </head>
+
+    <body>
+        <a href="index.html">Retourner à l'accueil</a>
+        <p>Le quizz est trop difficile ? Retrouvez les réponses <a href="page1.html" target="_blank">ici</a> ou allez sur <a href="https://fr.wikipedia.org/wiki/Chat" target="_blank">Wikipédia</a>.</p>
+
+        <h1>Notre quizz maison</h1>
+
+        <fieldset> <!--Champ pour les questions-->
+            <legend>Les chats font partie du règne...</legend>
+
+            <input type = "radio" class="reponse" id="regne1"  name="regne" value="Animalia"/>
+            <label for="regne1">Animalia</label>
+            <p></p> <!--On met un paragraphe vide pour sauter à la ligne-->
+
+            <input type="radio" class="reponse" id="regne2" name="regne" value="Fungi"/>
+            <label for="regne2">Fungi</label>
+
+            <p></p> <!--On met un paragraphe vide pour sauter à la ligne-->
+            <input type="radio" class="reponse" id="regne3" name="regne" value="Plantae"/>
+            <label for="regne3">Plantae</label>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Les chats sont...</legend>
+            <input type="radio" class="reponse" id="ordre1" name="ordre" value="Carnivores"/>
+            <label for="ordre1">Carnivores</label>
+            <p></p> <!--On met un paragraphe vide pour sauter à la ligne-->
+
+            <input type="radio" class="reponse" id="ordre2" name="ordre" value="Herbivores"/>
+            <label for="ordre2">Herbivores</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Les chats ont été... (plusieurs réponses possibles)</legend>
+            <input type="radio" class="reponse" id="passe1" name="passe1" value="Vénérés"/>
+            <label for="passe1">Vénérés par les égyptiens</label>
+            <p></p>
+
+            <input type="radio" class="reponse" id="passe2" name="passe2" value="Diabolisés"/>
+            <label for="passe2">Diabolisés au Moyen-Âge</label>
+            <p></p>
+
+            <input type="radio" class="reponse" id="passe3" name="passe1" value="Vénérés2"/>
+            <label for="passe3">Vénérés par les égyptiens et au Moyen-Âge</label>
+            <p></p>
+
+            <input type="radio" class="reponse" id="passe4" name="passe2" value="Diabolisés2"/>
+            <label for="passe4">Diabolisés par les égytiens et au Moyen-Âge</label>
+        </fieldset>
+
+
+        <button class="bouttonValidation">Valider le quizz</button>
+    </body>
+
+    
+
+    <script>
+       
+       let bouttonValid = document.querySelector(".bouttonValidation");
+
+
+
+       function chargerPageValidation(){
+        console.log("Boutton de validation cliqué !");
+        var reponses_choisies = document.getElementsByClassName("reponse");
+
+        var valeurs_reponses = []; // Valeurs des réponses
+        console.log(reponses_choisies);
+        for(let reponse of reponses_choisies){
+            // console.log(reponse);
+            if(reponse.checked){
+                console.log("réponse :", reponse.value)
+                valeurs_reponses.push(reponse.value);
+                
+                console.log("Valeurs des réponses :", valeurs_reponses)
+                
+            }
+
+           
+        
+        
+
+
+          
+            
+       }
+       sessionStorage.setItem("reponses", valeurs_reponses); 
+
+       window.location = "validation_quizz.html";
+
+    }
+        
+    
+
+    bouttonValid.addEventListener("click", chargerPageValidation);
+
+    </script>    
+
+    
+    
+
+
+
+</html>
