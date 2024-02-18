@@ -55,6 +55,28 @@ footer{
 .footer_a{
 	font-size:15px;
 }	
+
+@media screen and (max-width : 800px){ /* Si la résolution de l'écran est inférieure ou égale à 800 pixels */
+	p{ /* On modifie les règles à appliquer aux paragraphes */
+		font-family: "Roboto";
+		font-style : italic;
+		font-size : 15px;
+
+	}
+
+	img { /* On modifie les attributs des images */
+		width : 250px;
+		height : 200px;
+		border-radius: 8px;
+
+	}
+
+	a{ /* On modifie les attributs des hyperliens */
+		font-family : "Roboto";
+		font-style : italic;
+		font-size : 20px;
+	}
+}
 	
 	
 

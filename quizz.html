@@ -43,10 +43,10 @@
            
             <label><input type="checkbox" class="reponse" id="passe2" name="passe2" value="Diabolisés"/>Diabolisés au Moyen Age</label>
             
-            <label><input type="checkbox" class="reponse" id="passe3" name="passe2" value="Vénérés2"/>Vénérés par les égyptiens et au Moyen Age</label>
+            <label><input type="checkbox" class="reponse" id="passe3" name="passe3" value="Vénérés2"/>Vénérés par les égyptiens et au Moyen Age</label>
             
 
-            <label><input type="checkbox" class="reponse" id="passe4" name="passe1" value="Diabolisés2"/>Diabolisés par les égyptiens et au Moyen Age</label>
+            <label><input type="checkbox" class="reponse" id="passe4" name="passe4" value="Diabolisés2"/>Diabolisés par les égyptiens et au Moyen Age</label>
         </fieldset>
 
 
@@ -54,16 +54,19 @@
 
 
         <style>
+            @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
             label{ /* règles pour la balise label */
                 display:block;
                 user-select: none;
 
                 padding : 8px 2px;
 
+                font-family: "Roboto";
+
             }
 
             label:hover{ /* règles à appliquer quand la souris survole un label */
-                background-color: yellow;
+                background-color: rgb(37, 220, 37);
 
             }
         </style>
@@ -81,15 +84,17 @@
                 let checkboxes_id = {
                     "passe1" : "passe4",
                     "passe2" : "passe3",
-                    "passe3" : "passe4",
                     "passe3" : "passe4"
                 }
 
                 for(let key in checkboxes_id){ // Pour chaque clé contenue dans la liste des ID
-                    checkbox_a_decocher = document.getElementById(checkboxes_id[key]);
-                    if(checkbox.id === key && checkbox.checked === true){
-                        checkbox_a_decocher.checked = false;
+                    checkbox_a_decocher = document.getElementById(checkboxes_id[key]); // On retrouve la checkbox à décocher à l'aide des ID listées
+                    if(checkbox.id === key && checkbox.checked === true && checkbox_a_decocher.checked === true){ 
+                        checkbox_a_decocher.checked = true;
+                        checkbox.checked = false;
                     }
+
+                    
                 }
 
             })
