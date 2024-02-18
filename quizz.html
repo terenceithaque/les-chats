@@ -18,55 +18,94 @@
         <fieldset> <!--Champ pour les questions-->
             <legend>Les chats font partie du règne...</legend>
 
-            <input type = "radio" class="reponse" id="regne1"  name="regne" value="Animalia"/>
-            <label for="regne1">Animalia</label>
-            <p></p> <!--On met un paragraphe vide pour sauter à la ligne-->
+            <label><input type = "radio" class="reponse" id="regne1"  name="regne" value="Animalia"/>Animalia</label>
+            
 
-            <input type="radio" class="reponse" id="regne2" name="regne" value="Fungi"/>
-            <label for="regne2">Fungi</label>
-
-            <p></p> <!--On met un paragraphe vide pour sauter à la ligne-->
-            <input type="radio" class="reponse" id="regne3" name="regne" value="Plantae"/>
-            <label for="regne3">Plantae</label>
+            <label><input type="radio" class="reponse" id="regne2" name="regne" value="Fungi"/>Fungi</label>
+            
+            <label><input type="radio" class="reponse" id="regne3" name="regne" value="Plantae"/>Plantae</label>
+            
 
         </fieldset>
 
         <fieldset>
             <legend>Les chats sont...</legend>
-            <input type="radio" class="reponse" id="ordre1" name="ordre" value="Carnivores"/>
-            <label for="ordre1">Carnivores</label>
-            <p></p> <!--On met un paragraphe vide pour sauter à la ligne-->
+            <label><input type="radio" class="reponse" id="ordre1" name="ordre" value="Carnivores"/>Carnivores</label>
 
-            <input type="radio" class="reponse" id="ordre2" name="ordre" value="Herbivores"/>
-            <label for="ordre2">Herbivores</label>
+
+            <label><input type="radio" class="reponse" id="ordre2" name="ordre" value="Herbivores"/>Herbivores</label>
+
         </fieldset>
 
         <fieldset>
             <legend>Les chats ont été... (plusieurs réponses possibles)</legend>
-            <input type="radio" class="reponse" id="passe1" name="passe1" value="Vénérés"/>
-            <label for="passe1">Vénérés par les égyptiens</label>
-            <p></p>
+            <label><input type="checkbox" class="reponse" id="passe1" name="passe1" value="Vénérés"/>Vénérés par les égyptiens</label> 
+           
+            <label><input type="checkbox" class="reponse" id="passe2" name="passe2" value="Diabolisés"/>Diabolisés au Moyen Age</label>
+            
+            <label><input type="checkbox" class="reponse" id="passe3" name="passe2" value="Vénérés2"/>Vénérés par les égyptiens et au Moyen Age</label>
+            
 
-            <input type="radio" class="reponse" id="passe2" name="passe2" value="Diabolisés"/>
-            <label for="passe2">Diabolisés au Moyen-Âge</label>
-            <p></p>
-
-            <input type="radio" class="reponse" id="passe3" name="passe1" value="Vénérés2"/>
-            <label for="passe3">Vénérés par les égyptiens et au Moyen-Âge</label>
-            <p></p>
-
-            <input type="radio" class="reponse" id="passe4" name="passe2" value="Diabolisés2"/>
-            <label for="passe4">Diabolisés par les égytiens et au Moyen-Âge</label>
+            <label><input type="checkbox" class="reponse" id="passe4" name="passe1" value="Diabolisés2"/>Diabolisés par les égyptiens et au Moyen Age</label>
         </fieldset>
 
 
         <button class="bouttonValidation">Valider le quizz</button>
+
+
+        <style>
+            label{ /* règles pour la balise label */
+                display:block;
+                user-select: none;
+
+                padding : 8px 2px;
+
+            }
+
+            label:hover{ /* règles à appliquer quand la souris survole un label */
+                background-color: yellow;
+
+            }
+        </style>
     </body>
 
     
 
     <script>
+        let checkboxes = document.querySelectorAll("input[type='checkbox']"); // On obtient toutes les checkboxes
+
+        function decocher(){ // Fonction pour décocher des checkboxes
+            
+
+            checkboxes.forEach(function(checkbox){
+                let checkboxes_id = {
+                    "passe1" : "passe4",
+                    "passe2" : "passe3",
+                    "passe3" : "passe4",
+                    "passe3" : "passe4"
+                }
+
+                for(let key in checkboxes_id){ // Pour chaque clé contenue dans la liste des ID
+                    checkbox_a_decocher = document.getElementById(checkboxes_id[key]);
+                    if(checkbox.id === key && checkbox.checked === true){
+                        checkbox_a_decocher.checked = false;
+                    }
+                }
+
+            })
        
+        }
+
+        
+
+        checkboxes.forEach(function(checkbox){
+            checkbox.addEventListener("click", decocher);
+        })
+
+
+
+
+        
        let bouttonValid = document.querySelector(".bouttonValidation");
 
 
