@@ -1,159 +1,191 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <title>Quizz</title>
-        <link rel="stylesheet" href="CSS/style_quizz.css"/> 
-        <link rel="icon" type="image/jpg" href="images/chat_presentation.jpg"/>
-        <meta content="width=device-width,initial-scale=1" name="viewport"/>
-        <script src="script/validation_quizz.js"></script>
-        
-    </head>
+  <head>
+    <title>Quizz</title>
+    <link rel="stylesheet" href="CSS/style_quizz.css" />
+    <link rel="icon" type="image/jpg" href="images/chat_presentation.jpg" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <script src="script/validation_quizz.js"></script>
+  </head>
 
-    <body>
-        <a href="index.html">Retourner à l'accueil</a>
-        <p>Le quizz est trop difficile ? Retrouvez les réponses <a href="page1.html" target="_blank">ici</a> ou allez sur <a href="https://fr.wikipedia.org/wiki/Chat" target="_blank">Wikipédia</a>.</p>
+  <body>
+    <a href="index.html">Retourner à l'accueil</a>
+    <p>
+      Le quizz est trop difficile ? Retrouvez les réponses
+      <a href="page1.html" target="_blank">ici</a> ou allez sur
+      <a href="https://fr.wikipedia.org/wiki/Chat" target="_blank">Wikipédia</a
+      >.
+    </p>
 
-        <h1>Notre quizz maison</h1>
+    <h1>Notre quizz maison</h1>
+    <form>
+      <fieldset>
+        <!--Champ pour les questions-->
+        <legend>Les chats font partie du règne...</legend>
 
-        <fieldset> <!--Champ pour les questions-->
-            <legend>Les chats font partie du règne...</legend>
+        <label
+          ><input
+            type="radio"
+            class="reponse"
+            id="regne1"
+            name="regne"
+            value="Animalia"
+          />Animalia</label
+        >
 
-            <label><input type = "radio" class="reponse" id="regne1"  name="regne" value="Animalia"/>Animalia</label>
-            
+        <label
+          ><input
+            type="radio"
+            class="reponse"
+            id="regne2"
+            name="regne"
+            value="Fungi"
+          />Fungi</label
+        >
 
-            <label><input type="radio" class="reponse" id="regne2" name="regne" value="Fungi"/>Fungi</label>
-            
-            <label><input type="radio" class="reponse" id="regne3" name="regne" value="Plantae"/>Plantae</label>
-            
+        <label
+          ><input
+            type="radio"
+            class="reponse"
+            id="regne3"
+            name="regne"
+            value="Plantae"
+          />Plantae</label
+        >
+      </fieldset>
 
-        </fieldset>
+      <fieldset>
+        <legend>Les chats sont...</legend>
+        <label
+          ><input
+            type="radio"
+            class="reponse"
+            id="ordre1"
+            name="ordre"
+            value="Carnivores"
+          />Carnivores</label
+        >
 
-        <fieldset>
-            <legend>Les chats sont...</legend>
-            <label><input type="radio" class="reponse" id="ordre1" name="ordre" value="Carnivores"/>Carnivores</label>
+        <label
+          ><input
+            type="radio"
+            class="reponse"
+            id="ordre2"
+            name="ordre"
+            value="Herbivores"
+          />Herbivores</label
+        >
+      </fieldset>
 
+      <fieldset>
+        <legend>Les chats ont été... (plusieurs réponses possibles)</legend>
+        <label
+          ><input
+            type="checkbox"
+            class="reponse"
+            id="passe1"
+            name="passe1"
+            value="Vénérés"
+          />Vénérés par les égyptiens</label
+        >
 
-            <label><input type="radio" class="reponse" id="ordre2" name="ordre" value="Herbivores"/>Herbivores</label>
+        <label
+          ><input
+            type="checkbox"
+            class="reponse"
+            id="passe2"
+            name="passe2"
+            value="Diabolisés"
+          />Diabolisés au Moyen Age</label
+        >
 
-        </fieldset>
+        <label
+          ><input
+            type="checkbox"
+            class="reponse"
+            id="passe3"
+            name="passe3"
+            value="Vénérés2"
+          />Vénérés par les égyptiens et au Moyen Age</label
+        >
 
-        <fieldset>
-            <legend>Les chats ont été... (plusieurs réponses possibles)</legend>
-            <label><input type="checkbox" class="reponse" id="passe1" name="passe1" value="Vénérés"/>Vénérés par les égyptiens</label> 
-           
-            <label><input type="checkbox" class="reponse" id="passe2" name="passe2" value="Diabolisés"/>Diabolisés au Moyen Age</label>
-            
-            <label><input type="checkbox" class="reponse" id="passe3" name="passe3" value="Vénérés2"/>Vénérés par les égyptiens et au Moyen Age</label>
-            
+        <label
+          ><input
+            type="checkbox"
+            class="reponse"
+            id="passe4"
+            name="passe4"
+            value="Diabolisés2"
+          />Diabolisés par les égyptiens et au Moyen Age</label
+        >
+      </fieldset>
+    </form>
+    <button class="bouttonValidation">Valider le quizz</button>
 
-            <label><input type="checkbox" class="reponse" id="passe4" name="passe4" value="Diabolisés2"/>Diabolisés par les égyptiens et au Moyen Age</label>
-        </fieldset>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+      label {
+        /* règles pour la balise label */
+        display: block;
+        user-select: none;
 
+        padding: 8px 2px;
 
-        <button class="bouttonValidation">Valider le quizz</button>
+        font-family: "Roboto";
+      }
 
+      label:hover {
+        /* règles à appliquer quand la souris survole un label */
+        background-color: rgb(37, 220, 37);
+      }
+    </style>
+  </body>
 
-        <style>
-            @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-            label{ /* règles pour la balise label */
-                display:block;
-                user-select: none;
+  <script>
+    const coche_decoche = {
+      passe1: ["passe4"],
+      passe2: ["passe3"],
+      passe3: ["passe2", "passe4"],
+      passe4: ["passe1", "passe3"],
+    };
 
-                padding : 8px 2px;
+    let checkboxes = document.querySelectorAll("input[type='checkbox']"); // On obtient toutes les checkboxes
+    let bouttonValid = document.querySelector(".bouttonValidation");
 
-                font-family: "Roboto";
-
-            }
-
-            label:hover{ /* règles à appliquer quand la souris survole un label */
-                background-color: rgb(37, 220, 37);
-
-            }
-        </style>
-    </body>
-
-    
-
-    <script>
-        let checkboxes = document.querySelectorAll("input[type='checkbox']"); // On obtient toutes les checkboxes
-
-        function decocher(){ // Fonction pour décocher des checkboxes
-            
-
-            checkboxes.forEach(function(checkbox){
-                let checkboxes_id = {
-                    "passe1" : "passe4",
-                    "passe2" : "passe3",
-                    "passe3" : "passe4"
-                }
-
-                for(let key in checkboxes_id){ // Pour chaque clé contenue dans la liste des ID
-                    checkbox_a_decocher = document.getElementById(checkboxes_id[key]); // On retrouve la checkbox à décocher à l'aide des ID listées
-                    if(checkbox.id === key && checkbox.checked === true && checkbox_a_decocher.checked === true){ 
-                        checkbox_a_decocher.checked = true;
-                        checkbox.checked = false;
-                    }
-
-                    
-                }
-
-            })
-       
-        }
-
-        
-
-        checkboxes.forEach(function(checkbox){
-            checkbox.addEventListener("click", decocher);
-        })
-
-
-
-
-        
-       let bouttonValid = document.querySelector(".bouttonValidation");
-
-
-
-       function chargerPageValidation(){
-        console.log("Boutton de validation cliqué !");
-        var reponses_choisies = document.getElementsByClassName("reponse");
-
-        var valeurs_reponses = []; // Valeurs des réponses
-        console.log(reponses_choisies);
-        for(let reponse of reponses_choisies){
-            // console.log(reponse);
-            if(reponse.checked){
-                console.log("réponse :", reponse.value)
-                valeurs_reponses.push(reponse.value);
-                
-                console.log("Valeurs des réponses :", valeurs_reponses)
-                
-            }
-
-           
-        
-        
-
-
-          
-            
-       }
-       sessionStorage.setItem("reponses", valeurs_reponses); 
-
-       window.location = "validation_quizz.html";
-
-    }
-        
-    
-
+    checkboxes.forEach(function (checkbox) {
+      checkbox.addEventListener("click", clic_checkbox);
+    });
     bouttonValid.addEventListener("click", chargerPageValidation);
 
-    </script>    
+    function clic_checkbox(e) {
+      if (e.target.checked) {
+        let id = e.target.id;
+        let decoche = coche_decoche[id];
+        decoche.forEach(function (id_decoche) {
+          let checkbox_a_decocher = document.getElementById(id_decoche);
+          checkbox_a_decocher.checked = false;
+        });
+      }
+    }
 
-    
-    
+    function chargerPageValidation() {
+      console.log("Boutton de validation cliqué !");
+      var reponses_choisies = document.getElementsByClassName("reponse");
 
+      var valeurs_reponses = []; // Valeurs des réponses
+      console.log(reponses_choisies);
+      for (let reponse of reponses_choisies) {
+        // console.log(reponse);
+        if (reponse.checked) {
+          console.log("réponse :", reponse.value);
+          valeurs_reponses.push(reponse.value);
 
+          console.log("Valeurs des réponses :", valeurs_reponses);
+        }
+      }
+      sessionStorage.setItem("reponses", valeurs_reponses);
 
+      window.location = "validation_quizz.html";
+    }
+  </script>
 </html>
